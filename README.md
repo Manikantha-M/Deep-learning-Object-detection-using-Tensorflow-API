@@ -279,3 +279,30 @@ python export_inference_graph.py --input_type image_tensor --pipeline_config_pat
 This creates a frozen inference graph.pb file in the /object detection/inference graph folder.
 The .pb file contains the object detection classifier.
 
+## 5. Results and Simulations
+  ### Testing the classifier
+  The object detection classifier is all ready to go. We have written Python scripts to test it out on an image, video, or webcam feed.
+Due to the fact that most of the laptops have 0.9 Megapixels front facing webcamera, So we must not use it for feeding input images because it produces images of very poor quality and our classifier fails in detecting objects from the low quality feed.
+Hence, we come up with an idea of using our smartphone rear camera as the webcamera to the laptop, So that we would have better quality input image feed and better results. For this purpose we have used a software called ”DroidCam” in both smartphone and laptop which helps us to connect phone camera to the laptop using a common wifi hotspot.
+
+To test our object detector, move a picture of the object or objects into the /object detection folder, and change the ’image name’ variable in the Object detection image.py to match the file name of the picture. Alternatively, we can use a video of the objects (using Object detection video.py), or just plug in a USB webcam (or DroidCam client) and point it at the objects (using Object detection webcam.py).
+
+To run any of the scripts, type “idle” in the Anaconda Command Prompt (with the “tensorflow1” virtual environment activated) and press ENTER. This will open IDLE, and from there, we can open any of the scripts and run them.
+If everything is working properly, the object detector will initialize for about 10 seconds and then display a window showing any objects it is detected in the image.
+  ### Results
+  
+<p align="center">
+  <img src="doc/pic12.jpg">
+  
+<p align="center">
+  <img src="doc/pic13.jpg">
+ 
+<p align="center">
+  <img src="doc/pic14.jpg">
+
+<p align="center">
+  <img src="doc/pic15.jpg">
+ 
+<p align="center">
+  <img src="doc/pic16.jpg">
+  
