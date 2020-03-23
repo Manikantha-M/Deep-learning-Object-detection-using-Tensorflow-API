@@ -170,8 +170,15 @@ Finally, run the following commands from the C:/tensorflow1/models/research dire
 (tensorflow1) C:\tensorflow1\models\research> python setup.py build
 
 (tensorflow1) C:\tensorflow1\models\research> python setup.py install
+
+## 4. Data set preparation
+Now that the TensorFlow Object Detection API is all set up and ready to go, we need to provide the images it will use to train a new detection classifier.
+  ### 4.1 Gather Pictures
+  TensorFlow needs hundreds of images of an object to train a good detection classifier. To train a robust classifier, the training images should have random objects in the image along with the desired objects, and should have a variety of backgrounds and lighting conditions. There should be some images where the desired object is partially obscured, overlapped with something else, or only halfway in the picture.
+  
+  For our RGUKT student ID card detector, we have three different objects we want to detect (the ID label Manikanta, Saikumar and Pradeep). We used our SONY digital camera to take about 476 pictures of cards on its own, with various other non-desired objects and multiple cards in the picture. We know we want to be able to detect the cards when they are overlapping, so we made sure to have the cards be overlapped in many images.
  
-
-
- 
-
+<p align="center">
+  <img src="doc/pic9.jpg">
+  
+                                        FIGURE : 4.1.1 IIIT student ID card Dataset
