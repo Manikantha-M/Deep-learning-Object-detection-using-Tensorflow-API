@@ -31,5 +31,6 @@ Object detection workflow has the following steps :
   <img src="doc/pic3.jpg">
                                      FIGURE 1.2:  Object detection workflow
   
-  
+  ## 1.5 Applications of Object detection
+  ### 1.5.1 Facial recognition
   
