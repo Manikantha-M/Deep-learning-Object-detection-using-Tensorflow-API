@@ -67,17 +67,21 @@ Inventory management can be very tricky as items are hard to track in real time.
 It is also used by the government to access the security feed and match it with their existing database to find any criminals or to detect the robbers’ vehicle.
 The applications are limitless.
 
-## Faster Region-based Convolutional Network (Faster RCNN)
+## 2. Faster Region-based Convolutional Network (Faster RCNN)
 Region proposals detected with the selective search method were still necessary in the previous model, which is computationally expensive. S. Ren and al. (2016) have introduced Region Proposal Network (RPN) to directly generate region proposals, predict bounding boxes and detect objects. The Faster Region-based Convolutional Network (Faster RCNN) is a combination between the RPN and the Fast R-CNN model.
 
 A CNN model takes as input the entire image and produces feature maps. A window of size 3x3 slides all the feature maps and outputs a features vector linked to two fullyconnected layers, one for box-regression and one for box-classification. Multiple region proposals are predicted by the fully-connected layers. A maximum of k regions is fixed thus the output of the box-regression layer has a size of 4k (coordinates of the boxes, their height and width) and the output of the box-classification layer a size of 2k (“objectness” scores to detect an object or not in the box). The k region proposals detected by the sliding window are called anchors.
 <p align="center">
   <img src="doc/pic8.jpg">
                                  
-                                 FIGURE: Faster Region-based Convolutional Network
+                                 FIGURE 2.1: Faster Region-based Convolutional Network
  
 When the anchor boxes are detected, they are selected by applying a threshold over the “objectness” score to keep only the relevant boxes. These anchor boxes and the feature maps computed by the initial CNN model feeds a Fast R-CNN model.
 
 Faster R-CNN uses RPN to avoid the selective search method, it accelerates the training and testing processes, and improve the performances. The RPN uses a pre-trained model over the ImageNet dataset for classification and it is fine-tuned on the PASCAL VOC dataset. Then the generated region proposals with anchor boxes are used to train the Fast R-CNN. This process is iterative.
 
 The best Faster R-CNNs have obtained mAP scores of 78.8% over the 2007 PASCAL VOC test dataset and 75.9% over the 2012 PASCAL VOC test dataset. They have been trained with PASCAL VOC and COCO datasets. One of these models is 34 times faster than the Fast R-CNN using the selective search method.
+
+## 3. Building the Object detection classifier
+  ### 3.1 Installation
+  The system should have anaconda software version 3.0. We have been using windows 8.0 OS and we have installed anaconda 3-5.2.0 x64 bit. Python version v3.7.1 should also be installed. One can install the python package using the following command in Anaconda prompt.   "conda install -c anaconda python".
