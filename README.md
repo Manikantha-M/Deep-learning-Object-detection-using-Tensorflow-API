@@ -34,6 +34,8 @@ Object detection workflow has the following steps :
   ## 1.5 Applications of Object detection
   ### 1.5.1 Facial recognition
   A deep learning facial recognition system called the “DeepFace” has been developed by a group of researchers in the Facebook, which identifies human faces in a digital image very effectively. Google uses its own facial recognition system in Google Photos, which automatically segregates all the photos based on the person in the image. There are various components involved in Facial Recognition like the eyes, nose, mouth and the eyebrows.
-  <p align="center">
-  <img src="doc/pic4.jpg">
+  
+ <p align="center">
+ <img src="doc/pic4.jpg">
                                      FIGURE 1.3:  Facial recognition
+ 
