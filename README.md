@@ -192,3 +192,17 @@ Make sure the images are not too large. They should be less than 300KB each, and
                                     FIGURE 4.2.1 : labelImg Annotation tool
 
 LabelImg saves a .xml file containing the label data for each image. These .xml files will be used to generate TFRecords, which are one of the inputs to the TensorFlow trainer. Once you have labeled and saved each image, there will be one .xml file for each image in the /test and /train directories.
+  ### 4.3 Generate Training Data
+  With the images labeled, it is time to generate the TFRecords that serve as input data to the TensorFlow training model. First, the image .xml data will be used to create .csv files containing all the data for the train and test images. From the /object detection folder, issue the following command in the Anaconda command prompt:
+ 
+(tensorflow1) C:\tensorflow1\models\research\object_detection> python xml_to_csv.py
+ 
+This creates a train labels.csv and test labels.csv file in the /object detection/images folder. Now we have to gnerate TF record files which serve as input to the training pipeline. Generate the TFRecord files by issuing these commands from the /object detection folder:
+ 
+python generate_tfrecord.py --csv_input=images\train_labels.csv --image_dir=images
+\train --output_path=train.record
+python generate_tfrecord.py --csv_input=images\test_labels.csv --image_dir=images
+\test --output_path=test.record
+ 
+These generate a train.record and a test.record file in /object detection. These will be used to train the new object detection classifier.
+
