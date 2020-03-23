@@ -30,4 +30,4 @@ Object detection workflow has the following steps :
 <p align="center">
   <img src="doc/pic3.jpg">
 </p>
-                                                Object detection workflow
+                                                ##Object detection workflow
