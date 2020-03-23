@@ -29,7 +29,7 @@ Object detection workflow has the following steps :
 
 <p align="center">
   <img src="doc/pic3.jpg">
-                                                Object detection workflow
+                                     FIGURE 1.2:  Object detection workflow
   
   
   
