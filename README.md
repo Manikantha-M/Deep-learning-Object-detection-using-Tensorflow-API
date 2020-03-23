@@ -14,14 +14,13 @@ Tensorflow is Google’s Open Source Machine Learning Framework for dataflow pro
 </p>
 
 Tensors are just multidimensional arrays, an extension of 2-dimensional tables to data with a higher dimension. There are many features of Tensorflow which makes it appropriate for Deep Learning.
+
 ##1.4 Object detection workflow
+
 Object detection workflow has the following steps :
 
 1.Preparation of dataset.
-
 2.Annotating the dataset.
-
 3.Training the model on dataset and performing evaluation.
-
 4.Testing the model on new unseen data.
 
