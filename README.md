@@ -83,5 +83,14 @@ Faster R-CNN uses RPN to avoid the selective search method, it accelerates the t
 The best Faster R-CNNs have obtained mAP scores of 78.8% over the 2007 PASCAL VOC test dataset and 75.9% over the 2012 PASCAL VOC test dataset. They have been trained with PASCAL VOC and COCO datasets. One of these models is 34 times faster than the Fast R-CNN using the selective search method.
 
 ## 3. Building the Object detection classifier
-  ### 3.1 Installation
+  ### 3.1 Installation of required software
   The system should have anaconda software version 3.0. We have been using windows 8.0 OS and we have installed anaconda 3-5.2.0 x64 bit. Python version v3.7.1 should also be installed. One can install the python package using the following command in Anaconda prompt.   "conda install -c anaconda python".
+  ### 3.1.1 Dependencies
+  Tensorflow Object Detection API depends on the following libraries:
+•	Protobuf 3.0.0.
+•	Pillow 1.0
+•	lxml
+•	tf Slim (which is included in the ”tensorflow/models/research/” checkout)
+•	Jupyter notebook
+•	Matplotlib
+
