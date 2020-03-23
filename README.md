@@ -39,4 +39,5 @@ Object detection workflow has the following steps :
   <img src="doc/pic4.jpg">
   
                                              FIGURE 1.3:  Facial recognition
-     
+ 
+  ### 1.5.2 People counting
