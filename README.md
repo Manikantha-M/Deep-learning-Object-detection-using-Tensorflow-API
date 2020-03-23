@@ -61,3 +61,8 @@ Inventory management can be very tricky as items are hard to track in real time.
   Advanced control systems interpret sensory information to identify appropriate navigation paths, as well as obstacles and once the image sensor detects any sign of a living being in its path, it automatically stops. This happens at a very fast rate and is a big step towards Driverless Cars.
   <p align="center">
   <img src="doc/car.JPG">
+  
+  ### 1.5.5 Security
+  Object Detection plays a very important role in Security. Be it face ID of Apple or the retina scan used in all the sci-fi movies.
+It is also used by the government to access the security feed and match it with their existing database to find any criminals or to detect the robbers’ vehicle.
+The applications are limitless.
