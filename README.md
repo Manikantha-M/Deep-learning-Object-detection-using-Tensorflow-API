@@ -60,4 +60,4 @@ Inventory management can be very tricky as items are hard to track in real time.
   Self-driving cars are the Future, there’s no doubt in that. But the working behind it is very tricky as it combines a variety of techniques to perceive their surroundings, including radar, laser light, GPS, odometry, and computer vision.
   Advanced control systems interpret sensory information to identify appropriate navigation paths, as well as obstacles and once the image sensor detects any sign of a living being in its path, it automatically stops. This happens at a very fast rate and is a big step towards Driverless Cars.
   <p align="center">
-  <img src="doc/car.jpg">
+  <img src="doc/car.JPG">
