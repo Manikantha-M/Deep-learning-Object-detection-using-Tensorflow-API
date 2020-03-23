@@ -182,3 +182,5 @@ Now that the TensorFlow Object Detection API is all set up and ready to go, we n
   <img src="doc/pic9.jpg">
   
                                         FIGURE : 4.1.1 IIIT student ID card Dataset
+
+Make sure the images are not too large. They should be less than 300KB each, and their resolution should not be more than 720x1280. The larger the images are, the longer it will take to train the classifier. After we have all the pictures we need, we have moved 20% of them to the /object detection/images/test directory, and 80% of them to the /object detection /images/train directory. We made sure that there are a variety of pictures in both the /test and /train directories.
