@@ -257,5 +257,25 @@ label map path:
  
 Save the file after the changes have been made. That is it, The training job is all configured and ready to go.
 
+ ### 4.5 Run the Training
+ From the /object detection directory, issue the following command to begin training:
+ 
+python train.py --logtostderr --train_dir=training/ --pipeline_config_path=training
+/faster_rcnn_inception_v2_pets.config
+ 
+If everything has been set up correctly, TensorFlow will initialize the training. The initialization can take up to 80 seconds before the actual training begins. When training goes on, it will look like this:
+<p align="center">
+  <img src="doc/pic11.jpg">
+                                   
+                                   FIGURE 4.5.1: Object detection classifier Training window
+ 
+Each step of training reports the loss. It will start high and get lower and lower as training progresses. For our training on the Faster-RCNN-Inception-V2 model, it started at about 3.0 and quickly dropped below 1.50. We allowed our model to train until the loss consistently drops below 0.05, which took about 13000 steps, or about 60 hours (depending on how powerful your CPU and GPU are). Note: The loss numbers will be different if a different model is used. MobileNet-SSD starts with a loss of about 20, and should be trained until the loss is consistently under 2.
+### 4.6 Export Inference Graph
+After the loss is consistently below 0.05 we can stop the training process by issuning command ”ctrl c” in the Anaconda prompt. Now that training is complete, the last step is to generate the frozen inference graph (.pb file). From the /object detection folder, issue the following command, where “XXXX” in “model.ckpt-XXXX” should be replaced with the highest-numbered .ckpt file in the training folder:
+ 
+python export_inference_graph.py --input_type image_tensor --pipeline_config_path training/faster_rcnn_inception_v2_pets.config --trained_checkpoint_prefix training
+/model.ckpt-12639 --output_directory inference_graph
+ 
+This creates a frozen inference graph.pb file in the /object detection/inference graph folder.
+The .pb file contains the object detection classifier.
 
-  
