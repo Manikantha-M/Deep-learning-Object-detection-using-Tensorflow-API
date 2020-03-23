@@ -90,7 +90,6 @@ The best Faster R-CNNs have obtained mAP scores of 78.8% over the 2007 PASCAL VO
 •	Protobuf 3.0.0.
 •	Pillow 1.0
 •	lxml
-•	tf Slim (which is included in the ”tensorflow/models/research/” checkout)
-•	Jupyter notebook
+•	tf Slim
 •	Matplotlib
 
