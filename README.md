@@ -41,3 +41,5 @@ Object detection workflow has the following steps :
                                              FIGURE 1.3:  Facial recognition
  
   ### 1.5.2 People counting
+  Object detection can be also used for people counting, it is used for analyzing store performance or crowd statistics during festivals. These tend to be more difficult as people move out of the frame quickly.
+It is a very important application, as during crowd gathering this feature can be used for multiple purposes.
