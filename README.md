@@ -136,5 +136,42 @@ Install the other necessary packages by issuing the following commands :
 (tensorflow1) C:\> pip install matplotlib, 
 (tensorflow1) C:\> pip install pandas, 
 (tensorflow1) C:\> pip install opencv-python.
+
+### 3.1.5 Configure PYTHONPATH environment variable
+A PYTHONPATH variable must be created that points to the /models, /models/research, and /models/research/slim directories. Do this by issuing the following commands :
+ 
+(tensorflow1) C:\> set PYTHONPATH=C:\tensorflow1\models;C:\tensorflow1\models\research; C:\tensorflow1\models\research\slim
+ 
+(Note: Every time the ”tensorflow1” virtual environment is exited, the PYTHONPATH variable is reset and needs to be set up again.)
+### 3.1.6 Compile Protobufs and run setup.py
+Next, compile the Protobuf files, which are used by TensorFlow to configure model and training parameters. Unfortunately, the short protoc compilation command posted on TensorFlow’s Object Detection API installation page does not work on Windows. Every .proto file in the /object detection/protos directory must be called out individually by the command.
+
+In the Anaconda Command Prompt, change directories to the /models/research directory and copy and paste the following command into the command line and press Enter :
+
+ 
+protoc --python_out=. .\object_detection\protos\anchor_generator.proto .
+\object_detection\protos\argmax_matcher.proto .\object_detection\protos \bipartite_matcher.proto .\object_detection\protos\box_coder.proto .
+\object_detection\protos\box_predictor.proto .\object_detection\protos
+\eval.proto .\object_detection\protos\faster_rcnn.proto .\object_detection
+\protos\faster_rcnn_box_coder.proto .\object_detection\protos
+\grid_anchor_generator.proto .\object_detection\protos\hyperparams.proto . \object_detection\protos\image_resizer.proto .\object_detection\protos \input_reader.proto .\object_detection\protos\losses.proto .\object_detection \protos\matcher.proto .\object_detection\protos\mean_stddev_box_coder.proto .
+\object_detection\protos\model.proto .\object_detection\protos\optimizer.proto .
+\object_detection\protos\pipeline.proto .\object_detection\protos
+\post_processing.proto .\object_detection\protos\preprocessor.proto . \object_detection\protos\region_similarity_calculator.proto .\object_detection \protos\square_box_coder.proto .\object_detection\protos\ssd.proto .
+\object_detection\protos\ssd_anchor_generator.proto .\object_detection
+\protos\string_int_label_map.proto .\object_detection\protos\train.proto .
+\object_detection\protos\keypoint_box_coder.proto .\object_detection\protos
+\multiscale_anchor_generator.proto .\object_detection\protos\graph_rewriter.proto
+ 
+This creates a name pb2.py file from every name.proto file in the /object detection/protos folder.
+(Note: TensorFlow occassionally adds new .proto files to the /protos folder. If you get an error saying ImportError: cannot import name ’something something pb2’ , you may need to update the protoc command to include the new .proto files.)
+Finally, run the following commands from the C:/tensorflow1/models/research directory one after the other:
+ 
+(tensorflow1) C:\tensorflow1\models\research> python setup.py build
+
+(tensorflow1) C:\tensorflow1\models\research> python setup.py install
+ 
+
+
  
 
