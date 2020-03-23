@@ -181,6 +181,14 @@ Now that the TensorFlow Object Detection API is all set up and ready to go, we n
 <p align="center">
   <img src="doc/pic9.jpg">
   
-                                        FIGURE : 4.1.1 IIIT student ID card Dataset
+                                        FIGURE 4.1.1: IIIT student ID card Dataset
 
 Make sure the images are not too large. They should be less than 300KB each, and their resolution should not be more than 720x1280. The larger the images are, the longer it will take to train the classifier. After we have all the pictures we need, we have moved 20% of them to the /object detection/images/test directory, and 80% of them to the /object detection /images/train directory. We made sure that there are a variety of pictures in both the /test and /train directories.
+  ### 4.2 Label Pictures
+  With all the pictures gathered, it is time to label the desired objects in every picture. LabelImg is a great tool for labeling images, and its GitHub page has very clear instructions on how to install and use it. We downloaded and installed LabelImg, point it to our /images/train directory, and then drawn a box around each object in each image. Repeated the process for all the images in the /images/test directory.
+<p align="center">
+  <img src="doc/pic10.jpg">
+  
+                                    FIGURE 4.2.1 : labelImg Annotation tool
+
+LabelImg saves a .xml file containing the label data for each image. These .xml files will be used to generate TFRecords, which are one of the inputs to the TensorFlow trainer. Once you have labeled and saved each image, there will be one .xml file for each image in the /test and /train directories.
