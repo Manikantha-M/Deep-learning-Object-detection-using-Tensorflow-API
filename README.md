@@ -102,5 +102,39 @@ Command for installing Tensorflow CPU version:
 
 The above installations are needed for image detection using Tensorflow API.
 For object detection in a live webcam stream using Tensorflow API, we need an extra module called openCV version 3.0. OpenCV module allows us to initialize a camera object and to read the frame from the live webcam stream so that we can detect objects. One can install openCV using Anaconda prompt using the following command 
+
 "conda install -c conda-forge opencv"
+  ### 3.1.2 Set up TensorFlow Directory and Anaconda Virtual Environment
+  The TensorFlow Object Detection API requires using the specific directory structure provided in its GitHub repository. It also requires several additional Python packages, specific additions to the PATH and PYTHONPATH variables, and a few extra setup commands to get everything set up to run or train an object detection model.
+  ### 3.1.3 Download the Faster-RCNN-Inception-V2-COCO model from TensorFlow’s model zoo
+  TensorFlow provides several object detection models (pre-trained classifiers with specific neural network architectures) in its model zoo. Some models (such as the SSD-MobileNet model) have an architecture that allows for faster detection but with less accuracy, while some models (such as the Faster-RCNN model) give slower detection but with more accuracy. We initially started with the SSD-MobileNet-V1 model, but it did not do a very good job identifying the ID cards in my images. We re-trained our detector on the FasterRCNN-Inception-V2 model, and the detection worked considerably better, but with a noticeably slower speed.
+  
+You can choose which model to train your objection detection classifier on. If you are planning on using the object detector on a device with low computational power (such as a smart phone or Raspberry Pi), use the SDD-MobileNet model. If you will be running your detector on a decently powered laptop or desktop PC, use one of the RCNN models.
+
+Here we will use the Faster-RCNN-Inception-V2 model. Download the model here. Open the downloaded faster rcnn inception v2 coco 2018 01 28.tar.gz file with a file archiver such as WinZip and extract the faster rcnn inception v2 coco 2018 01 28 folder to the C drive/tensorflow1/models/research/object detection folder.
+### 3.1.4 Set up new Anaconda virtual environment
+Next, we will work on setting up a virtual environment in Anaconda for tensorflow-cpu. From the Start menu in Windows, search for the Anaconda Prompt utility and run it.
+In the command terminal that pops up, create a new virtual environment called “tensorflow1” by issuing the following command :
+ 
+C:\> conda create -n tensorflow1 pip python=3.5
+ 
+Then, activate the environment by issuing :
+ 
+C:\> conda activate tensorflow1
+ 
+Install tensorflow-cpu in this environment by issuing :
+ 
+(tensorflow1) C:\> pip install tensorflow
+ 
+Install the other necessary packages by issuing the following commands :
+
+(tensorflow1) C:\> conda install -c anaconda protobuf
+(tensorflow1) C:\> pip install pillow
+(tensorflow1) C:\> pip install lxml
+(tensorflow1) C:\> pip install Cython
+(tensorflow1) C:\> pip install jupyter
+(tensorflow1) C:\> pip install matplotlib
+(tensorflow1) C:\> pip install pandas
+(tensorflow1) C:\> pip install opencv-python
+ 
 
