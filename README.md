@@ -47,3 +47,7 @@ It is a very important application, as during crowd gathering this feature can b
   <img src="doc/pic5.jpg">
   
                                              FIGURE 1.4: People Counting
+
+  ### 1.5.3 Industrial quality check
+   Object detection is also used in industrial processes to identify products. Finding a specific object through visual inspection is a basic task that is involved in multiple industrial processes like sorting, inventory management, machining, quality management, packaging etc.
+Inventory management can be very tricky as items are hard to track in real time. Automatic object counting and localization allows improving inventory accuracy.
