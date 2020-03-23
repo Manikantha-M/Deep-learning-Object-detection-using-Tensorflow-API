@@ -10,7 +10,7 @@ Object Detection is the process of finding real-world object instances like car,
 ## 1.3 Tensorflow framework
 Tensorflow is Google’s Open Source Machine Learning Framework for dataflow programming across a range of tasks. Nodes in the graph represent mathematical operations, while the graph edges represent the multi-dimensional data arrays (tensors) communicated between them.
 <p align="center">
-  <img src="doc/pic2.jpg">
+  <img src="doc/pictf.jpg">
 </p>
 
 
