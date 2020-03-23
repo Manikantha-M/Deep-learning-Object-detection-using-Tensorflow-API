@@ -230,5 +230,32 @@ id: 3 name: ’Pradeep’
 }
 
  The label map ID numbers should be the same as what is defined in the generate tfrecord.py file
+ #### Configure training
+ Finally, the object detection training pipeline must be configured. It defines which model and what parameters will be used for training. This is the last step before running training.
+Navigate to C:/tensorflow1/models/research/object detection/samples/configs and copy the faster rcnn inception v2 pets.config file into the /object detection/training directory. Then, open the file with a text editor. There are several changes to make to the .config file, mainly changing the number of classes and examples, and adding the file paths to the training data.
+Make the following changes to the faster rcnn inception v2 pets.config file. Note: The paths must be entered with single forward slashes (NOT backslashes), or TensorFlow will give a file path error when trying to train the model Also, the paths must be in double quotation marks ( ” ), not single quotation marks ( ’ ).
+Line 9. Changed num classes to the number of different objects we want the classifier to detect. For our project Manikanta, Sakumar, and Pradeep, it would be num classes : 3 Line 110, Change fine tune checkpoint to:
+fine tune checkpoint :
+ 
+"C:/tensorflow1/models/research/object_detection/faster_rcnn_inception_v2_coco_2018 _01_28/model.ckpt"
+ 
+Lines 126 and 128, In the train input reader section, change input path and label map path to:
+ 
+input_path : "C:/tensorflow1/models/research/object_detection/train.record"
+ 
+label map path:
+ 
+"C:/tensorflow1/models/research/object_detection/training/labelmap.pbtxt"
+ 
+Line 132, Change num examples to the number of images you have in the /images/test directory. In our case it was 102, i.e., having 102 test images in the test folder. Lines 140 and 142, In the eval input reader section, change input path and label map path to: input path :
+ 
+"C:/tensorflow1/models/research/object_detection/test.record"
+ 
+label map path:
+ 
+"C:/tensorflow1/models/research/object_detection/training/labelmap.pbtxt"
+ 
+Save the file after the changes have been made. That is it, The training job is all configured and ready to go.
+
 
   
