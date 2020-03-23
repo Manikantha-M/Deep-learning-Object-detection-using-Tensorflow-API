@@ -87,9 +87,20 @@ The best Faster R-CNNs have obtained mAP scores of 78.8% over the 2007 PASCAL VO
   The system should have anaconda software version 3.0. We have been using windows 8.0 OS and we have installed anaconda 3-5.2.0 x64 bit. Python version v3.7.1 should also be installed. One can install the python package using the following command in Anaconda prompt.   "conda install -c anaconda python".
   ### 3.1.1 Dependencies
   Tensorflow Object Detection API depends on the following libraries:
-•	Protobuf 3.0.0.
+•	Tensorflow
+•	Numpy
+•	Matplotlib
 •	Pillow 1.0
 •	lxml
 •	tf Slim
-•	Matplotlib
+•	Protobuf 3.0.0.
+
+A typical user can install Tensorflow using following command, Installing tensorflow will install all the above mentioned libraries Protobuf, pillow, lxml, tfslim, Numpy and Matplotlib. As our system does not has any GPU such as Nvidia, Radeon etc., we will go with Tensorflow CPU version intsallation by issuing the follwing command in Anaconda prompt.
+Command for installing Tensorflow CPU version:
+
+"pip install tensorflow"
+
+The above installations are needed for image detection using Tensorflow API.
+For object detection in a live webcam stream using Tensorflow API, we need an extra module called openCV version 3.0. OpenCV module allows us to initialize a camera object and to read the frame from the live webcam stream so that we can detect objects. One can install openCV using Anaconda prompt using the following command 
+"conda install -c conda-forge opencv"
 
