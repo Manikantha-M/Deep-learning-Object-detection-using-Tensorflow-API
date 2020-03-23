@@ -20,7 +20,13 @@ Tensors are just multidimensional arrays, an extension of 2-dimensional tables t
 Object detection workflow has the following steps :
 
 1.Preparation of dataset.
+
 2.Annotating the dataset.
+
 3.Training the model on dataset and performing evaluation.
+
 4.Testing the model on new unseen data.
 
+<p align="center">
+  <img src="doc/pic3.jpg">
+</p>
