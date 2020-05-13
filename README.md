@@ -83,7 +83,7 @@ Faster R-CNN uses RPN to avoid the selective search method, it accelerates the t
 The best Faster R-CNNs have obtained mAP scores of 78.8% over the 2007 PASCAL VOC test dataset and 75.9% over the 2012 PASCAL VOC test dataset. They have been trained with PASCAL VOC and COCO datasets. One of these models is 34 times faster than the Fast R-CNN using the selective search method.
 
 <p align="center">
-  <img src="FasterRcnn.JPG">
+  <img src="FasterRcnn.jpg">
 </p>
 
 ## 3. Building the Object detection classifier
